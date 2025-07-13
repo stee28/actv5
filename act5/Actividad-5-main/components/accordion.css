@@ -1,0 +1,43 @@
+@import url('../styles/variables.css');
+
+.accordion {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.accordion__item + .accordion__item {
+  border-top: 1px solid var(--color-border);
+}
+
+.accordion__header {
+  padding: var(--space-md);
+  background: var(--color-bg);
+  cursor: pointer;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s;
+}
+
+.accordion__header:hover,
+.accordion__header:focus {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.accordion__body {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--color-surface);
+  transition: max-height 0.3s cubic-bezier(.4,0,.2,1), padding 0.3s;
+  padding: 0 var(--space-md);
+}
+
+.accordion__item--open .accordion__body {
+  max-height: 200px;
+  padding: var(--space-md);
+}

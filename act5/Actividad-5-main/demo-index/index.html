@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Library Demo Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../components/button.css">
+  <link rel="stylesheet" href="../components/card.css">
+  <link rel="stylesheet" href="../components/form.css">
+  <link rel="stylesheet" href="../components/navbar.css">
+  <link rel="stylesheet" href="../components/modal.css">
+  <link rel="stylesheet" href="../components/tooltip.css">
+  <link rel="stylesheet" href="../components/alert.css">
+  <link rel="stylesheet" href="../components/badge.css">
+  <link rel="stylesheet" href="../components/accordion.css">
+  <link rel="stylesheet" href="../components/tabs.css">
+
+  <style>
+    :root {
+      --container-width: 960px;
+      --section-spacing: 4rem;
+      --header-margin-bottom: 1.5rem;
+    }
+    body {
+      font-family: 'Inter', sans-serif; 
+      background-color: #f9fafb; 
+      color: #374151;
+      padding: 2rem;
+    }
+ 
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+    }
+    section {
+      margin-bottom: var(--section-spacing);
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+    h2 {
+      margin-bottom: var(--header-margin-bottom);
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.75rem;
+    }
+    .demo-intro {
+        text-align: center;
+        margin-bottom: var(--section-spacing);
+        background-color: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 1rem; 
+      flex-wrap: wrap; 
+    }
+    .icon-btn {
+      position: relative;
+      background: none;
+      border: none;
+      font-size: 2rem; 
+      cursor: pointer;
+      color: #374151;
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: background-color 0.2s;
+    }
+    .icon-btn:hover {
+      background-color: #e5e7eb;
+    }
+    .icon-btn::after {
+      content: attr(data-count);
+      position: absolute;
+      top: -0.25rem;
+      right: -0.25rem;
+      background-color: #ef4444; 
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 50%;
+      padding: 0.2em 0.5em;
+      min-width: 1.5em; 
+      text-align: center;
+      line-height: 1;
+    }
+    .u-visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="navbar__menu">
+        <a href="#" class="navbar__item">Inicio</a>
+        <a href="#" class="navbar__item">Componentes</a>
+        <a href="#" class="navbar__item">Contacto</a>
+      </div>
+      <button class="navbar__toggle" aria-label="Abrir menú">☰</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="demo-intro">
+      <h1>🚀 Biblioteca de Componentes UI</h1>
+      <p>
+        **Explora nuestra colección de componentes** y lleva tus interfaces al siguiente nivel.
+      </p>
+      <p>
+        <a href="#botones" class="btn btn--primary">Ver Componentes</a> 
+      </p>
+    </section>
+
+    <section>
+      <h2>Tarjeta Profesional</h2>
+      <div class="card" style="max-width: 350px;">
+        <img class="card__image" src="C:\Users\CompuStore\Downloads\MAURICIO SALAZAR.jpeg" alt="Retrato de una persona sonriendo">
+        <div class="card__header">
+            <h3>Mauro Sala</h3>
+            <p class="text-muted">Estudiante de ingeniería en IC'S</p>
+        </div>
+        <div class="card__body">
+          <p>Estudiante de Ingeniería en TIC's apasionado por la tecnología y la creación de soluciones digitales inteligentes.</p>
+        </div>
+        <div class="card__footer">
+          <button class="btn">Contactar</button>
+          <button class="btn btn--Descripcion">Ver Perfil</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="botones"> <h2>Botones con estados</h2>
+      <div class="btn-group">
+        <button class="btn btn--primary">Primario</button>
+        <button class="btn btn--secondary">Secundario</button>
+        <button class="btn btn--disabled" disabled>Deshabilitado</button>
+        <button class="btn btn--primary" id="openModal">Abrir Modal</button>
+      </div>
+    </section>
+
+    <section id="badge">
+      <h2>Icon&nbsp;Badge</h2>
+      <button class="icon-btn" data-count="3">🔔<span class="u-visually-hidden">Notificaciones</span></button>
+    </section>
+
+    <section>
+      <h2>Formulario</h2>
+      <form>
+        <div class="form-group">
+          <label class="label" for="input1">Nombre</label>
+          <input class="input" id="input1" type="text" placeholder="Escribe tu nombre...">
+        </div>
+        <div class="form-group">
+          <label class="label" for="select1">País</label>
+          <select class="select" id="select1">
+            <option>Ecuador</option>
+            <option>Colombia</option>
+            <option>Perú</option>
+          </select>
+        </div>
+        <div class="form-group checkbox-group">
+          <input class="checkbox" id="check1" type="checkbox">
+          <label class="label" for="check1">Acepto los términos y condiciones</label>
+        </div>
+        <button class="btn">Enviar</button>
+      </form>
+    </section>
+    
+  </main>
+
+  <footer>© 2025 Mi Biblioteca UI</footer>
+
+  <div class="modal" id="modalDemo" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal__dialog">
+      <h3 id="modalTitle" class="u-mb-2">Título del Modal</h3>
+      <p>Este modal demuestra <strong>transiciones</strong>, <strong>flexbox</strong> y
+        la reutilización de <strong>variables CSS</strong>.</p>
+      <div class="btn-group u-mt-3">
+        <button class="btn btn--secondary" id="closeModal">Cerrar</button>
+        <button class="btn btn--primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Navbar toggle (mobile)
+      const navbarToggle = document.querySelector('.navbar__toggle');
+      const navbarMenu = document.querySelector('.navbar__menu'); 
+      if (navbarToggle && navbarMenu) {
+        navbarToggle.addEventListener('click', function() {
+          navbarMenu.classList.toggle('navbar__menu--open'); 
+        });
+      }
+
+      // Modal
+      const openModalBtn  = document.getElementById('openModal');
+      const closeModalBtn = document.getElementById('closeModal');
+      const modal         = document.getElementById('modalDemo');
+
+      if (openModalBtn && closeModalBtn && modal) { 
+        openModalBtn.addEventListener('click', () => modal.classList.add('modal--open'));
+        closeModalBtn.addEventListener('click', () => modal.classList.remove('modal--open'));
+        modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('modal--open'); });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') modal.classList.remove('modal--open'); });
+      }
+
+      // Accordion
+      document.querySelectorAll('.accordion__header').forEach(header => {
+        header.addEventListener('click', () => {
+          const item = header.parentElement;
+          item.classList.toggle('accordion__item--open');
+        });
+      });
+
+      // Tabs
+      const tabLists = document.querySelectorAll('.tabs__list');
+      tabLists.forEach(list => {
+        const tabs = list.querySelectorAll('.tabs__tab');
+        tabs.forEach((tab, index) => {
+          tab.addEventListener('click', () => {
+            const tabContainer = list.closest('.tabs');
+            const panels = tabContainer.querySelectorAll('.tabs__panel');
+            
+            tabs.forEach(t => t.classList.remove('tabs__tab--active'));
+            panels.forEach(p => p.classList.remove('tabs__panel--active'));
+
+            tab.classList.add('tabs__tab--active');
+            panels[index].classList.add('tabs__panel--active');
+          });
+        });
+      });
+    });
+
+  </script>
+</body>
+</html>

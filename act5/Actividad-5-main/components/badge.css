@@ -1,0 +1,33 @@
+@import url('../styles/variables.css');
+
+.badge {
+  display: inline-block;
+  padding: 0 var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  border-radius: 999px;
+  background: var(--color-border);
+  color: var(--color-text);
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+.badge--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.badge--success {
+  background: var(--color-success);
+  color: #fff;
+}
+
+.badge--warning {
+  background: var(--color-warning);
+  color: #fff;
+}
+
+.badge--danger {
+  background: var(--color-danger);
+  color: #fff;
+}

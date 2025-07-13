@@ -1,0 +1,50 @@
+@import url('../styles/variables.css');
+
+.card {
+  /* Contenedor principal con Flexbox */
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden; 
+  transition: var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-lg);
+}
+
+.card__image {
+  width: 100%;
+  height: 200px; 
+  object-fit: cover; 
+}
+
+.card__header,
+.card__body,
+.card__footer {
+  padding: calc(var(--spacing-unit) * 3);
+}
+
+.card__header {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card__header h3 {
+    margin-bottom: 0;
+}
+
+.card__body {
+  flex-grow: 1; 
+}
+
+.card__footer {
+  background-color: #f9fafb;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: calc(var(--spacing-unit) * 2);
+  flex-wrap: wrap;
+}

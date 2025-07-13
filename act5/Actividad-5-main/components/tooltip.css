@@ -1,0 +1,45 @@
+@import url('../styles/variables.css');
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip__text {
+  visibility: hidden;
+  opacity: 0;
+  width: max-content;
+  max-width: 220px;
+  background: var(--color-text);
+  color: #fff;
+  text-align: center;
+  border-radius: var(--border-radius);
+  padding: var(--space-xs) var(--space-sm);
+  position: absolute;
+  z-index: 20;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.98);
+  transition: opacity 0.2s, transform 0.2s;
+  font-size: var(--font-size-sm);
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(30,41,59,0.12);
+}
+
+.tooltip:hover .tooltip__text,
+.tooltip:focus-within .tooltip__text {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.tooltip__text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-text) transparent transparent transparent;
+}

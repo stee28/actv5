@@ -1,0 +1,40 @@
+@import url('../styles/variables.css');
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-md);
+  border: 1.5px solid;
+  background: var(--color-bg);
+  box-shadow: var(--box-shadow);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.alert--success {
+  border-color: var(--color-success);
+  background: #e7f9ef;
+  color: var(--color-success);
+}
+
+.alert--warning {
+  border-color: var(--color-warning);
+  background: #fffbe6;
+  color: var(--color-warning);
+}
+
+.alert--danger {
+  border-color: var(--color-danger);
+  background: #ffeaea;
+  color: var(--color-danger);
+}
+
+.alert--info {
+  border-color: var(--color-primary);
+  background: #e6f0ff;
+  color: var(--color-primary);
+}

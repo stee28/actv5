@@ -1,0 +1,39 @@
+@import url('../styles/variables.css');
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.tabs__list {
+  display: flex;
+  gap: var(--space-md);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.tabs__tab {
+  padding: var(--space-sm) var(--space-lg);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tabs__tab--active {
+  color: var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.tabs__panel {
+  padding: var(--space-md) 0;
+  display: none;
+}
+
+.tabs__panel--active {
+  display: block;
+}
